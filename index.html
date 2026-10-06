@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Puff & Pastel — cute aesthetic & kawaii accessories, delivered all over Tunisia." />
+  <title>Puff & Pastel — Cute things, happy vibes ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">🎀 Cute things • Kawaii vibes • Delivery all over Tunisia 🇹🇳</div>
+
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-bow">🎀</span>
+      <span>Puff & Pastel</span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">Our vibe</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="cart-btn" id="cartBtn">♡ <span>Cart</span><b id="cartCount">0</b></button>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="sparkles">✦　˚　♡　˚　✦</div>
+      <div class="hero-copy">
+        <span class="eyebrow">PUFF & PASTEL</span>
+        <h1>Add a little<br><em>magic</em> to daily life.</h1>
+        <p>Cute aesthetic & kawaii accessories made for soft-hearted people. Little details, big smiles. ♡</p>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#shop">Shop the cuteness →</a>
+          <a class="text-btn" href="#collections">Explore collections</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="blob blob-one"></div>
+        <div class="blob blob-two"></div>
+        <div class="floating-card card-a">🎀</div>
+        <div class="floating-card card-b">☁️</div>
+        <div class="floating-card card-c">🧸</div>
+        <div class="hero-bear">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+        <div class="hero-sticker">made with<br><strong>♡ love ♡</strong></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div>📦 <strong>Delivery</strong><small>All over Tunisia</small></div>
+      <div>💌 <strong>DM friendly</strong><small>We're happy to help</small></div>
+      <div>🎁 <strong>Gift-ready</strong><small>Perfect little surprises</small></div>
+      <div>✨ <strong>Hand-picked</strong><small>Only cute stuff</small></div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading">
+        <div><span class="eyebrow">SHOP BY MOOD</span><h2>Find your kind of cute</h2></div>
+        <a href="#shop">See all →</a>
+      </div>
+      <div class="collections">
+        <button class="collection plush" data-category="Plushies"><span>🧸</span><strong>Plushie cloud</strong><small>Soft & cuddly</small></button>
+        <button class="collection bows" data-category="Bows"><span>🎀</span><strong>Pretty bows</strong><small>For your cute era</small></button>
+        <button class="collection stationery" data-category="Stationery"><span>🌸</span><strong>Pastel stationery</strong><small>Make studying adorable</small></button>
+        <button class="collection accessories" data-category="Accessories"><span>✨</span><strong>Daily accessories</strong><small>Little magic everywhere</small></button>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading">
+        <div><span class="eyebrow">NEW & CUTE</span><h2>Our little shop</h2></div>
+        <div class="filters">
+          <button class="filter active" data-filter="All">All</button>
+          <button class="filter" data-filter="Plushies">Plushies</button>
+          <button class="filter" data-filter="Bows">Bows</button>
+          <button class="filter" data-filter="Stationery">Stationery</button>
+          <button class="filter" data-filter="Accessories">Accessories</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-card">
+        <div class="about-character">૮₍˶ •. • ⑅₎ა</div>
+        <div>
+          <span class="eyebrow">A LITTLE NOTE FROM US</span>
+          <h2>Small things can make an ordinary day feel special.</h2>
+          <p>Puff & Pastel is a Tunisian kawaii corner created for anyone who loves pastel colors, cute details and tiny happy surprises. We curate accessories that bring a little softness to your everyday life.</p>
+          <p class="signature">with love, Puff & Pastel 🎀</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter section">
+      <div>
+        <span class="eyebrow">DON'T MISS THE CUTENESS</span>
+        <h2>Get first dibs on new drops ♡</h2>
+        <p>New kawaii finds, limited collections and sweet offers.</p>
+      </div>
+      <form id="newsletterForm">
+        <input type="email" placeholder="your@email.com" required>
+        <button class="primary-btn" type="submit">Join us ✦</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-brand"><span>🎀</span><strong>Puff & Pastel</strong><p>Cute things & happy vibes, delivered across Tunisia 🇹🇳</p></div>
+    <div><strong>Shop</strong><a href="#shop">All products</a><a href="#collections">Collections</a><a href="#">New arrivals</a></div>
+    <div><strong>Help</strong><a href="#">Delivery</a><a href="#">FAQ</a><a href="#">Contact us</a></div>
+    <div><strong>Follow</strong><a href="#" target="_blank">Instagram @puff.and.pastel</a><a href="#">TikTok</a></div>
+    <div class="copyright">© 2026 Puff & Pastel. Made with ♡ in Tunisia.</div>
+  </footer>
+
+  <div class="search-panel" id="searchPanel">
+    <button class="close-panel" id="closeSearch">×</button>
+    <div class="search-inner"><span>⌕</span><input id="searchInput" placeholder="Search something cute..." autofocus></div>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-head"><h3>Your cute bag ♡</h3><button id="closeCart">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">Your bag is waiting for something cute. 🎀</div>
+    <div class="cart-footer">
+      <div><span>Total</span><strong id="cartTotal">0.00 DT</strong></div>
+      <button class="primary-btn full" id="checkoutBtn">Send order by email ✉️</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="toast" id="toast">Added to your cute bag ♡</div>
+  <div class="product-modal" id="productModal"></div>
+  <div class="checkout-modal" id="checkoutModal">
+    <div class="checkout-box">
+      <button class="checkout-close" id="checkoutClose">×</button>
+      <span class="eyebrow">PUFF & PASTEL</span>
+      <h2>Complete your order ♡</h2>
+      <p>Fill in your details and we'll send your order details to Puff & Pastel by email.</p>
+      <form id="checkoutForm">
+        <input id="customerName" type="text" placeholder="Your name" required>
+        <input id="customerPhone" type="tel" placeholder="Phone number" required>
+        <select id="customerGovernorate" required>
+          <option value="">Choose governorate</option>
+          <option>Tunis</option><option>Ariana</option><option>Ben Arous</option><option>Manouba</option>
+          <option>Nabeul</option><option>Zaghouan</option><option>Bizerte</option><option>Béja</option>
+          <option>Jendouba</option><option>Le Kef</option><option>Siliana</option><option>Sousse</option>
+          <option>Monastir</option><option>Mahdia</option><option>Sfax</option><option>Kairouan</option>
+          <option>Kasserine</option><option>Sidi Bouzid</option><option>Gabès</option><option>Medenine</option>
+          <option>Tataouine</option><option>Gafsa</option><option>Tozeur</option><option>Kebili</option>
+        </select>
+        <textarea id="customerAddress" placeholder="Delivery address" rows="3" required></textarea>
+        <button class="primary-btn full" type="submit">Send order by email ✉️</button>
+      </form>
+      <small class="whatsapp-note">Your order details will be sent to Puff & Pastel by email.</small>
+    </div>
+  </div>
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
