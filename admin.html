@@ -1,71 +1,1175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
 <title>Puff & Pastel — Admin Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="styles.css">
+
+
 <style>
-.admin{background:#f8f2f6;min-height:100vh}.admin-wrap{max-width:1250px;margin:auto;padding:32px 5% 70px}.admin-top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:24px}.admin-top h1{font-family:"Baloo 2";font-size:38px;margin:0}.admin-top p{margin:4px 0 0;color:#877982}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.admin-btn{border:0;border-radius:14px;padding:11px 16px;background:#fff;border:1px solid #eadde5;font-weight:800;cursor:pointer;color:#4b4147}.admin-btn.primary{background:#343038;color:#fff}.admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;border:1px solid #eee0e8;border-radius:22px;padding:20px}.stat small{color:#877982}.stat strong{display:block;font:700 31px "Baloo 2";margin-top:7px}.panel{background:#fff;border:1px solid #eee0e8;border-radius:25px;padding:25px;margin-top:22px}.panel h2{font:700 25px "Baloo 2";margin:0 0 5px}.panel-note{color:#877982;margin:0 0 20px;font-size:14px}.product-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.product-form .full{grid-column:1/-1}.product-form label{font-size:13px;font-weight:800;color:#554b52}.product-form input,.product-form textarea,.product-form select{width:100%;box-sizing:border-box;margin-top:7px;border:1px solid #e8dce4;border-radius:14px;padding:12px;font:inherit;background:#fff}.product-form textarea{min-height:110px;resize:vertical}.image-box{border:2px dashed #dfc7d5;border-radius:18px;padding:16px;text-align:center;background:#fcf8fa}.preview{width:150px;height:120px;object-fit:cover;border-radius:15px;margin:10px auto;display:none}.product-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-table{width:100%;border-collapse:collapse}.admin-table th,.admin-table td{text-align:left;padding:12px;border-bottom:1px solid #f0e6eb;font-size:13px;vertical-align:middle}.admin-product-img{width:58px;height:58px;border-radius:13px;object-fit:cover;background:#f4e9ef}.pill{padding:5px 9px;border-radius:20px;background:#f7e0e9}.danger{background:#fff0f3;color:#b94d6c;border:1px solid #f3ccd8}.edit{background:#f0eaff}.back{color:#c66d94;text-decoration:none;font-weight:800}.empty{text-align:center;padding:30px;color:#877982}.order-row{display:none}.notice{padding:12px 14px;border-radius:14px;background:#fff8dd;color:#6c5c2d;margin-bottom:18px;font-size:13px}.hidden{display:none!important}@media(max-width:900px){.admin-grid{grid-template-columns:1fr 1fr}.product-form{grid-template-columns:1fr}}@media(max-width:600px){.admin-grid{grid-template-columns:1fr}.admin-top{align-items:flex-start;flex-direction:column}.admin-table{display:block;overflow-x:auto;white-space:nowrap}}
+
+/* =====================================================
+   ADMIN DASHBOARD
+===================================================== */
+
+.admin{
+    background:#f8f2f6;
+    min-height:100vh;
+}
+
+.admin-wrap{
+    max-width:1250px;
+    margin:auto;
+    padding:32px 5% 70px;
+}
+
+.admin-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    margin-bottom:24px;
+}
+
+.admin-top h1{
+    font-family:"Baloo 2";
+    font-size:38px;
+    margin:0;
+}
+
+.admin-top p{
+    margin:4px 0 0;
+    color:#877982;
+}
+
+.admin-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.admin-btn{
+    border:0;
+    border-radius:14px;
+    padding:11px 16px;
+    background:#fff;
+    border:1px solid #eadde5;
+    font-weight:800;
+    cursor:pointer;
+    color:#4b4147;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.admin-btn.primary{
+    background:#343038;
+    color:#fff;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:#fff;
+    border:1px solid #eee0e8;
+    border-radius:22px;
+    padding:20px;
+}
+
+.stat small{
+    color:#877982;
+}
+
+.stat strong{
+    display:block;
+    font:700 31px "Baloo 2";
+    margin-top:7px;
+}
+
+.panel{
+    background:#fff;
+    border:1px solid #eee0e8;
+    border-radius:25px;
+    padding:25px;
+    margin-top:22px;
+}
+
+.panel h2{
+    font:700 25px "Baloo 2";
+    margin:0 0 5px;
+}
+
+.panel-note{
+    color:#877982;
+    margin:0 0 20px;
+    font-size:14px;
+}
+
+.product-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.product-form .full{
+    grid-column:1/-1;
+}
+
+.product-form label{
+    font-size:13px;
+    font-weight:800;
+    color:#554b52;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select{
+    width:100%;
+    box-sizing:border-box;
+    margin-top:7px;
+    border:1px solid #e8dce4;
+    border-radius:14px;
+    padding:12px;
+    font:inherit;
+    background:#fff;
+}
+
+.product-form textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.image-box{
+    border:2px dashed #dfc7d5;
+    border-radius:18px;
+    padding:16px;
+    text-align:center;
+    background:#fcf8fa;
+}
+
+.preview{
+    width:150px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+    margin:10px auto;
+    display:none;
+}
+
+.product-actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.admin-table th,
+.admin-table td{
+    text-align:left;
+    padding:12px;
+    border-bottom:1px solid #f0e6eb;
+    font-size:13px;
+    vertical-align:middle;
+}
+
+.admin-product-img{
+    width:58px;
+    height:58px;
+    border-radius:13px;
+    object-fit:cover;
+    background:#f4e9ef;
+}
+
+.pill{
+    padding:5px 9px;
+    border-radius:20px;
+    background:#f7e0e9;
+}
+
+.danger{
+    background:#fff0f3;
+    color:#b94d6c;
+    border:1px solid #f3ccd8;
+}
+
+.edit{
+    background:#f0eaff;
+}
+
+.empty{
+    text-align:center;
+    padding:30px;
+    color:#877982;
+}
+
+.notice{
+    padding:12px 14px;
+    border-radius:14px;
+    background:#fff8dd;
+    color:#6c5c2d;
+    margin-bottom:18px;
+    font-size:13px;
+}
+
+.hidden{
+    display:none!important;
+}
+
+
+/* =====================================================
+   PASSWORD LOGIN
+===================================================== */
+
+.admin-login{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            #f8dce8 0%,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            #e5dcfa 0%,
+            transparent 30%
+        ),
+
+        #f8f2f6;
+}
+
+
+.login-card{
+
+    width:100%;
+
+    max-width:420px;
+
+    box-sizing:border-box;
+
+    padding:42px 32px;
+
+    background:#fff;
+
+    border:1px solid #eadde5;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 25px 70px rgba(70,45,60,.15);
+}
+
+
+.login-logo{
+
+    font-size:55px;
+
+    line-height:1;
+
+    margin-bottom:8px;
+}
+
+
+.login-brand{
+
+    font-family:"Quicksand",sans-serif;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    color:#c66d94;
+
+    margin-bottom:4px;
+}
+
+
+.login-card h1{
+
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:36px;
+
+    line-height:1.1;
+
+    color:#343038;
+
+    margin:8px 0 7px;
+}
+
+
+.login-card > p{
+
+    font-family:"Quicksand",sans-serif;
+
+    font-size:14px;
+
+    color:#877982;
+
+    margin:0 0 25px;
+}
+
+
+.password-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    margin-bottom:13px;
+}
+
+
+#adminPassword{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:15px 52px 15px 17px;
+
+    border:1px solid #e4d6df;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    color:#343038;
+
+    font-family:"Quicksand",sans-serif;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+
+#adminPassword:focus{
+
+    border-color:#d995b3;
+
+    box-shadow:
+        0 0 0 4px rgba(217,149,179,.13);
+}
+
+
+.show-password{
+
+    position:absolute;
+
+    right:8px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:40px;
+
+    height:40px;
+
+    border:0;
+
+    border-radius:11px;
+
+    background:#f8f2f6;
+
+    cursor:pointer;
+
+    font-size:17px;
+}
+
+
+.login-btn{
+
+    width:100%;
+
+    border:0;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    background:#343038;
+
+    color:#fff;
+
+    font-family:"Quicksand",sans-serif;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(52,48,56,.18);
+}
+
+
+.login-error{
+
+    min-height:20px;
+
+    margin-top:13px;
+
+    color:#c04f70;
+
+    font-family:"Quicksand",sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .admin-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-form{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .admin-top{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .admin-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .login-card{
+        padding:35px 23px;
+        border-radius:25px;
+    }
+
+    .login-card h1{
+        font-size:31px;
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body class="admin">
-<div class="admin-wrap">
-  <div class="admin-top">
-    <div><span class="eyebrow">PUFF & PASTEL</span><h1>Store dashboard 🎀</h1><p>Add products, photos and descriptions without editing code.</p></div>
-    <div class="admin-actions"><a class="admin-btn" href="index.html">← View store</a><button class="admin-btn" id="exportBtn">Export products</button><label class="admin-btn" for="importInput">Import products</label><input id="importInput" type="file" accept="application/json" class="hidden"></div>
-  </div>
 
-  <div class="notice">💗 Products added here are saved in this browser. For a real online admin system shared across devices, we can connect a database such as Supabase later.</div>
 
-  <div class="admin-grid">
-    <div class="stat"><small>Store products</small><strong id="productCount">0</strong></div>
-    <div class="stat"><small>Custom products</small><strong id="customCount">0</strong></div>
-    <div class="stat"><small>Saved orders</small><strong id="orderCount">0</strong></div>
-    <div class="stat"><small>Store email</small><strong style="font-size:17px;word-break:break-word">puffsandpastel@gmail.com</strong></div>
-  </div>
+<!-- =====================================================
+     PASSWORD LOGIN
+===================================================== -->
 
-  <section class="panel">
-    <h2 id="formTitle">Add a new product ✨</h2>
-    <p class="panel-note">Choose a photo from your computer, fill in the details, then click Add product. The product will appear immediately in the shop.</p>
-    <form id="productForm" class="product-form">
-      <input type="hidden" id="editId">
-      <label>Product name *<input id="pName" required placeholder="Example: Pink Bunny Bag"></label>
-      <label>Price (DT) *<input id="pPrice" type="number" min="0" step="0.001" required placeholder="29.900"></label>
-      <label>Category *<select id="pCategory" required><option>Plushies</option><option>Bows</option><option>Stationery</option><option>Accessories</option><option>Other</option></select></label>
-      <label>Badge<input id="pBadge" placeholder="NEW / BESTSELLER / TRENDING"></label>
-      <label>Emoji fallback<input id="pEmoji" placeholder="🎀" value="🎀"></label>
-      <label>Background color<input id="pBg" type="color" value="#f8e8f0"></label>
-      <label class="full">Description<textarea id="pDescription" placeholder="Write the product description customers will see..."></textarea></label>
-      <div class="full image-box">
-        <strong>📷 Product photo</strong><br>
-        <small>JPG, PNG or WEBP. The website compresses the image and saves it with the product.</small>
-        <input id="pImage" type="file" accept="image/*" style="display:block;margin:12px auto;max-width:100%">
-        <img id="imagePreview" class="preview" alt="Preview">
-        <input id="existingImage" type="hidden">
-      </div>
-      <div class="full product-actions">
-        <button class="admin-btn primary" type="submit" id="saveProductBtn">＋ Add product</button>
-        <button class="admin-btn hidden" type="button" id="cancelEdit">Cancel edit</button>
-        <button class="admin-btn" type="button" id="clearForm">Clear form</button>
-      </div>
-    </form>
-  </section>
+<div id="adminLogin" class="admin-login">
 
-  <section class="panel">
-    <h2>Your products</h2>
-    <p class="panel-note">Edit or delete products you added from this dashboard. Default products are also shown.</p>
-    <div id="productTableWrap"></div>
-  </section>
+    <div class="login-card">
 
-  <section class="panel">
-    <h2>Recent orders</h2>
-    <p class="panel-note">Orders submitted from this same browser are stored here too. Email remains the main order notification.</p>
-    <div id="ordersWrap"></div>
-  </section>
+        <div class="login-logo">
+            🎀
+        </div>
+
+        <div class="login-brand">
+            PUFF & PASTEL
+        </div>
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+        <p>
+            Enter your password to manage your store.
+        </p>
+
+
+        <form id="loginForm">
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    id="showPassword"
+                    class="show-password"
+                >
+                    👁
+                </button>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                Enter dashboard ♡
+            </button>
+
+
+            <div
+                id="loginError"
+                class="login-error"
+            ></div>
+
+        </form>
+
+    </div>
+
 </div>
+
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+===================================================== -->
+
+<div class="admin-wrap">
+
+    <div class="admin-top">
+
+        <div>
+
+            <span class="eyebrow">
+                PUFF & PASTEL
+            </span>
+
+            <h1>
+                Store dashboard 🎀
+            </h1>
+
+            <p>
+                Add products, photos and descriptions
+                without editing code.
+            </p>
+
+        </div>
+
+
+        <div class="admin-actions">
+
+            <a
+                class="admin-btn"
+                href="index.html"
+            >
+                ← View store
+            </a>
+
+            <button
+                class="admin-btn"
+                id="exportBtn"
+            >
+                Export products
+            </button>
+
+            <label
+                class="admin-btn"
+                for="importInput"
+            >
+                Import products
+            </label>
+
+            <input
+                id="importInput"
+                type="file"
+                accept="application/json"
+                class="hidden"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        💗 Products added here are saved in this browser.
+
+        For a real online admin system shared across devices,
+        connect a database such as Supabase.
+
+    </div>
+
+
+
+    <!-- =====================================================
+         STATISTICS
+    ===================================================== -->
+
+    <div class="admin-grid">
+
+        <div class="stat">
+
+            <small>
+                Store products
+            </small>
+
+            <strong id="productCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>
+                Custom products
+            </small>
+
+            <strong id="customCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>
+                Saved orders
+            </small>
+
+            <strong id="orderCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <small>
+                Store email
+            </small>
+
+            <strong
+                style="
+                font-size:17px;
+                word-break:break-word
+                "
+            >
+                puffsandpastel@gmail.com
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ADD PRODUCT
+    ===================================================== -->
+
+    <section class="panel">
+
+        <h2 id="formTitle">
+            Add a new product ✨
+        </h2>
+
+        <p class="panel-note">
+
+            Choose a photo from your computer,
+            fill in the details, then click Add product.
+
+        </p>
+
+
+        <form
+            id="productForm"
+            class="product-form"
+        >
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <label>
+
+                Product name *
+
+                <input
+                    id="pName"
+                    required
+                    placeholder="Example: Pink Bunny Bag"
+                >
+
+            </label>
+
+
+            <label>
+
+                Price (DT) *
+
+                <input
+                    id="pPrice"
+                    type="number"
+                    min="0"
+                    step="0.001"
+                    required
+                    placeholder="29.900"
+                >
+
+            </label>
+
+
+            <label>
+
+                Category *
+
+                <select
+                    id="pCategory"
+                    required
+                >
+
+                    <option>
+                        Plushies
+                    </option>
+
+                    <option>
+                        Bows
+                    </option>
+
+                    <option>
+                        Stationery
+                    </option>
+
+                    <option>
+                        Accessories
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Badge
+
+                <input
+                    id="pBadge"
+                    placeholder="NEW / BESTSELLER / TRENDING"
+                >
+
+            </label>
+
+
+            <label>
+
+                Emoji fallback
+
+                <input
+                    id="pEmoji"
+                    placeholder="🎀"
+                    value="🎀"
+                >
+
+            </label>
+
+
+            <label>
+
+                Background color
+
+                <input
+                    id="pBg"
+                    type="color"
+                    value="#f8e8f0"
+                >
+
+            </label>
+
+
+            <label class="full">
+
+                Description
+
+                <textarea
+                    id="pDescription"
+                    placeholder="Write the product description customers will see..."
+                ></textarea>
+
+            </label>
+
+
+
+            <!-- PRODUCT PHOTO -->
+
+            <div class="full image-box">
+
+                <strong>
+                    📷 Product photo
+                </strong>
+
+                <br>
+
+                <small>
+                    JPG, PNG or WEBP.
+                    The website compresses the image
+                    and saves it with the product.
+                </small>
+
+                <input
+                    id="pImage"
+                    type="file"
+                    accept="image/*"
+                    style="
+                    display:block;
+                    margin:12px auto;
+                    max-width:100%;
+                    "
+                >
+
+                <img
+                    id="imagePreview"
+                    class="preview"
+                    alt="Preview"
+                >
+
+                <input
+                    id="existingImage"
+                    type="hidden"
+                >
+
+            </div>
+
+
+
+            <div class="full product-actions">
+
+                <button
+                    class="admin-btn primary"
+                    type="submit"
+                    id="saveProductBtn"
+                >
+                    ＋ Add product
+                </button>
+
+
+                <button
+                    class="admin-btn hidden"
+                    type="button"
+                    id="cancelEdit"
+                >
+                    Cancel edit
+                </button>
+
+
+                <button
+                    class="admin-btn"
+                    type="button"
+                    id="clearForm"
+                >
+                    Clear form
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCTS
+    ===================================================== -->
+
+    <section class="panel">
+
+        <h2>
+            Your products
+        </h2>
+
+        <p class="panel-note">
+
+            Edit or delete products you added
+            from this dashboard.
+
+        </p>
+
+        <div id="productTableWrap"></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORDERS
+    ===================================================== -->
+
+    <section class="panel">
+
+        <h2>
+            Recent orders
+        </h2>
+
+        <p class="panel-note">
+
+            Orders submitted from this same browser
+            are stored here too.
+
+            Email remains the main order notification.
+
+        </p>
+
+        <div id="ordersWrap"></div>
+
+    </section>
+
+</div>
+
+
+
+<!-- =====================================================
+     YOUR EXISTING JAVASCRIPT
+===================================================== -->
+
 <script src="products.js"></script>
+
 <script src="admin.js"></script>
+
+
+
+<!-- =====================================================
+     PASSWORD SYSTEM
+===================================================== -->
+
+<script>
+
+/*
+=========================================================
+PUFF & PASTEL ADMIN PASSWORD
+=========================================================
+
+CHANGE THE PASSWORD HERE
+*/
+
+const ADMIN_PASSWORD = "Ayailoveyousm";
+
+
+/* Get elements */
+
+const loginScreen =
+    document.getElementById("adminLogin");
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const passwordInput =
+    document.getElementById("adminPassword");
+
+const loginError =
+    document.getElementById("loginError");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+
+
+/* =====================================================
+   CHECK IF ALREADY LOGGED IN
+===================================================== */
+
+if (
+    sessionStorage.getItem(
+        "puff_admin_logged_in"
+    ) === "true"
+) {
+
+    loginScreen.style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const password =
+            passwordInput.value;
+
+
+        if (
+            password === ADMIN_PASSWORD
+        ) {
+
+            /* Save login */
+
+            sessionStorage.setItem(
+                "puff_admin_logged_in",
+                "true"
+            );
+
+
+            /* Hide login */
+
+            loginScreen.style.display =
+                "none";
+
+
+            /* Clear error */
+
+            loginError.textContent = "";
+
+
+        } else {
+
+            /* Wrong password */
+
+            loginError.textContent =
+                "❌ Incorrect password. Try again.";
+
+
+            passwordInput.value = "";
+
+
+            passwordInput.focus();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SHOW / HIDE PASSWORD
+===================================================== */
+
+showPassword.addEventListener(
+    "click",
+    function() {
+
+        if (
+            passwordInput.type ===
+            "password"
+        ) {
+
+            passwordInput.type =
+                "text";
+
+            showPassword.textContent =
+                "🙈";
+
+        } else {
+
+            passwordInput.type =
+                "password";
+
+            showPassword.textContent =
+                "👁";
+
+        }
+
+    }
+);
+
+</script>
+
+
 </body>
-</html>
+
+</html>F
